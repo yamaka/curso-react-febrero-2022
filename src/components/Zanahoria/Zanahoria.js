@@ -11,6 +11,7 @@ import "./Zanahoria.css";
 //crear el componente funcional con estado o sin estado
  const Zanahoria = () =>{
     //logica de pintado, manejo de eventos, form , etc
+    //con las props o estado
 
     //render
     return <div>
