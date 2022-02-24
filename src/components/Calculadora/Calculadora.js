@@ -15,15 +15,32 @@ class Calculadora extends Component{
         }
     }
 
-    suma = () => {
-        const {operando1, operando2} = this.state;
-        const res = parseInt(operando1) + parseInt(operando2);
-        this.setState({resultado: res})
+    operar = (tipoOperacion) => {
+        const {operando1, operando2} = this.state; // destructurando
+        let resultadoOperacion = 0;
+        switch(tipoOperacion){
+            case '+': 
+            resultadoOperacion = parseInt(operando1) + parseInt(operando2);
+            break;
+            case '-':
+            resultadoOperacion = parseInt(operando1) - parseInt(operando2);
+            break;
+            case '*':
+            resultadoOperacion = parseInt(operando1) * parseInt(operando2);
+            break;
+            case '/':
+            resultadoOperacion = parseInt(operando1) / parseInt(operando2);
+            break;
+        }
+        this.setState({resultado: resultadoOperacion})
     }
 
-    render(){
-        const {operando1, operando2, resultado} = this.state;
-        return <div>
+    
+    render(){ // funcion simpre implementarlo en un componente como clase!!!
+        const {operando1, operando2, resultado} = this.state; // usando destructuracion
+
+        //siempre retornar un pedazo de interfaz
+        return <div style={{display: 'flex', flexDirection:'column', alignItems:'center'}}>
                 <h2>Calculadora!!!!</h2>{/* centrar este titulo con flexbox */}
                 <div>
                     <div>
@@ -41,10 +58,10 @@ class Calculadora extends Component{
                         />
                     </div>
                     <div className="buttons-container">
-                        <button className="button" onClick={() => this.suma()}>+</button>
-                        <button className="button">-</button>
-                        <button className="button">*</button>
-                        <button className="button">/</button>
+                        <button className="button" onClick={() => this.operar('+')}>+</button>
+                        <button className="button" onClick={() => this.operar('-')}>-</button>
+                        <button className="button" onClick={() => this.operar('*')}>*</button>
+                        <button className="button" onClick={() => this.operar('/')}>/</button>
                     </div>
                     <div className="title-xl">
                         resultado:

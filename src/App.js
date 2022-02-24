@@ -3,6 +3,7 @@ import './App.css';
 import Zanahorias from './components/Zanahorias/Zanahorias';
 import Lechuga from './components/Lechuga/Lechuga';
 import Calculadora from './components/Calculadora/Calculadora';
+import CiclosVida from './components/CiclosVida/CiclosVida';
 
 function App() {
   return (
@@ -13,13 +14,14 @@ function App() {
       alignItems: 'center'
     }}>
       {/* componentes sin estado  */}
-     {/*  <h1>Componentes sin estado  funcionales</h1>
+      {/* <h1>Componentes sin estado  funcionales</h1>
       <h2>Verduleria</h2>
       <Zanahorias titulo={"zanahorias super economicas"} cantidad={3} />  */}
         {/* hacer lo mismo con lechugas */}
       {/* componentes con estado */}
-      <h1>componentes con estado como clase</h1> 
-      <Calculadora/>
+      {/* <h1>componentes con estado como clase</h1> 
+      <Calculadora/> */}
+      <CiclosVida/>
     </div>
   );
 }
