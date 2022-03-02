@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 
 export default class Componente2 extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            contador : 0
+        };
+    }
     //primer ciclo de vida de un componente
     componentDidMount(){
         //ideal para hacer llamadas al servidor
@@ -23,9 +29,21 @@ export default class Componente2 extends Component {
         }
     }
 
+    incrementar = () =>{
+        const {contador} = this.state;
+        this.setState({
+            contador: contador + 1
+        })
+    }
+
   render() {
+    const {contador} = this.state
     return (
-      <div>Componente2!!! <div>tarea crear un contador y cuando llegue a 10 que vaya al componetne 1</div></div>
+      <div>Componente2!!!
+            <div>contador: {contador}</div>
+          <button onClick={() => this.incrementar()}>incrementar contador</button>
+      </div>
+
     )
   }
 }

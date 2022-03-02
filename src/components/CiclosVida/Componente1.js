@@ -14,15 +14,20 @@ export default class Componente1 extends Component {
         //ideal para hacer llamadas al servidor
         console.log("componentDidMount Componente1")
     }
-    componentWillUnmount(){
-        //ideal para limpiar intervalos etc
-        console.log("componentWillUnmount Componente1")
+   
+
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        if(prevState.contador == 4){
+            return 1
+        }
+        return null;
     }
+
 
     //se ejecuta cuando se actualiza el estado o los estados del componente
     componentDidUpdate(prevProps, prevState, snapshot){
         console.log("componentDidUpdate Comonente1");
-        if(prevState.contador == 4){
+        if(snapshot !== null){
             alert("cuidado vas a llegar a 5")
             this.setState({
                 contador: 0
@@ -32,6 +37,13 @@ export default class Componente1 extends Component {
         }
     }
 
+    //el ultimo ciclo de vida
+    componentWillUnmount(){
+        //ideal para limpiar intervalos etc
+        console.log("componentWillUnmount Componente1")
+    }
+
+  
     incrementar = () =>{
         const {contador} = this.state;
         this.setState({

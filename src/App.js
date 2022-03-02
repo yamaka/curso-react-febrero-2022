@@ -4,6 +4,7 @@ import Zanahorias from './components/Zanahorias/Zanahorias';
 import Lechuga from './components/Lechuga/Lechuga';
 import Calculadora from './components/Calculadora/Calculadora';
 import CiclosVida from './components/CiclosVida/CiclosVida';
+import CalculadoraHooks from './hooks/Calculadora/Calculadora'
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* componentes con estado */}
       {/* <h1>componentes con estado como clase</h1> 
       <Calculadora/> */}
-      <CiclosVida/>
+      {/* <CiclosVida/> */}
+      <CalculadoraHooks/>
     </div>
   );
 }
