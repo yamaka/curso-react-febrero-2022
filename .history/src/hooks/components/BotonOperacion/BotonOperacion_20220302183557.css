@@ -1,7 +1,9 @@
-.boton-numerico {
+.boton-operacion {
   border: solid 2px;
-  padding: 0.5rem;
+  padding: 1.5rem;
   border-radius: 0.3rem;
   font-size: 3rem;
+  height: 3rem;
+  width: 1rem;
   margin: 0.3rem;
 }

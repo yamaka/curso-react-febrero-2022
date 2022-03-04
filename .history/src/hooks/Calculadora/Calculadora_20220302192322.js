@@ -10,9 +10,9 @@ import "./Calculadora.css";
 
 const Calculadora = () => {
   const [display, setDisplay] = useState("0");
-  const [operandoA, setOperandoA] = useState("");
-  const [operandoB, setOperandoB] = useState("");
-  const [operacion, setOperacion] = useState("");
+  const [operandoA, setOperandoA] = useState(0);
+  const [operandoB, setOperandoB] = useState(0);
+  const [operacion, setOperacion] = useState("+");
 
   //   se puede tambien con objetos
   //   const [calculadora, setCalculadora] = useState({
@@ -25,11 +25,11 @@ const Calculadora = () => {
   //   setCalculadora({ ...calculadora, ...{ display: "0" } });
 
   const onPressNumerico = (numero) => {
-    if (operacion == "") {
-      setOperandoA(operandoA + numero);
-      setDisplay(display == "0" ? numero : display + numero);
+    if (operandoA == 0) {
+      setOperandoA(numero);
+      setDisplay(numero);
     } else {
-      setOperandoB(operandoB + numero);
+      setOperandoB(numero);
       setDisplay(display + numero);
     }
   };
@@ -40,31 +40,27 @@ const Calculadora = () => {
   };
 
   const calcular = () => {
-    let retultado = 0;
     switch (operacion) {
       case "+":
-        retultado = (parseInt(operandoA) + parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) + parseInt(operandoB)).toString());
         break;
       case "-":
-        retultado = (parseInt(operandoA) - parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) - parseInt(operandoB)).toString());
         break;
       case "*":
-        retultado = (parseInt(operandoA) * parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) * parseInt(operandoB)).toString());
         break;
       case "/":
-        retultado = (parseInt(operandoA) / parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) / parseInt(operandoB)).toString());
         break;
     }
-    setDisplay(retultado);
-    setOperandoA(retultado);
-    setOperandoB("");
   };
 
   const onPressRefresh = () => {
     setDisplay("0");
-    setOperandoA("");
-    setOperandoB("");
-    setOperacion("");
+    setOperandoA(0);
+    setOperandoB(0);
+    setOperacion("+");
   };
 
   return (

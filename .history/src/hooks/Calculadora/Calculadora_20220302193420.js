@@ -57,7 +57,6 @@ const Calculadora = () => {
     }
     setDisplay(retultado);
     setOperandoA(retultado);
-    setOperandoB("");
   };
 
   const onPressRefresh = () => {

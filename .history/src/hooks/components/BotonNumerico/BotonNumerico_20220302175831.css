@@ -1,0 +1,8 @@
+.boton-numerico{
+    border: solid 2px;
+    padding:1.5rem;
+    border-radius: .3rem;
+    font-size: 3rem;
+    height: 2rem;
+    margin:.3rem
+}

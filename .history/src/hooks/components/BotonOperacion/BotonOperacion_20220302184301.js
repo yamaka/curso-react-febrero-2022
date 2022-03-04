@@ -3,9 +3,9 @@ import "./BotonOperacion.css";
 
 const BotonOperacion = ({ operator, onPress }) => {
   return (
-    <button className="boton-operacion" onClick={() => onPress(operator)}>
-      {operator}
-    </button>
+    <div className="boton-operacion">
+      <span onClick={() => onPress(operator)}>{operator}</span>
+    </div>
   );
 };
 

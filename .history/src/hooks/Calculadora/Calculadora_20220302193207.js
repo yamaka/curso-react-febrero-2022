@@ -40,24 +40,20 @@ const Calculadora = () => {
   };
 
   const calcular = () => {
-    let retultado = 0;
     switch (operacion) {
       case "+":
-        retultado = (parseInt(operandoA) + parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) + parseInt(operandoB)).toString());
         break;
       case "-":
-        retultado = (parseInt(operandoA) - parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) - parseInt(operandoB)).toString());
         break;
       case "*":
-        retultado = (parseInt(operandoA) * parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) * parseInt(operandoB)).toString());
         break;
       case "/":
-        retultado = (parseInt(operandoA) / parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) / parseInt(operandoB)).toString());
         break;
     }
-    setDisplay(retultado);
-    setOperandoA(retultado);
-    setOperandoB("");
   };
 
   const onPressRefresh = () => {

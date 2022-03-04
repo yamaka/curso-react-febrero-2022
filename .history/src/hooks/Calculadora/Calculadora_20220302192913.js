@@ -27,9 +27,9 @@ const Calculadora = () => {
   const onPressNumerico = (numero) => {
     if (operacion == "") {
       setOperandoA(operandoA + numero);
-      setDisplay(display == "0" ? numero : display + numero);
+      setDisplay(display + numero);
     } else {
-      setOperandoB(operandoB + numero);
+      setOperandoB(numero);
       setDisplay(display + numero);
     }
   };
@@ -40,31 +40,27 @@ const Calculadora = () => {
   };
 
   const calcular = () => {
-    let retultado = 0;
     switch (operacion) {
       case "+":
-        retultado = (parseInt(operandoA) + parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) + parseInt(operandoB)).toString());
         break;
       case "-":
-        retultado = (parseInt(operandoA) - parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) - parseInt(operandoB)).toString());
         break;
       case "*":
-        retultado = (parseInt(operandoA) * parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) * parseInt(operandoB)).toString());
         break;
       case "/":
-        retultado = (parseInt(operandoA) / parseInt(operandoB)).toString();
+        setDisplay((parseInt(operandoA) / parseInt(operandoB)).toString());
         break;
     }
-    setDisplay(retultado);
-    setOperandoA(retultado);
-    setOperandoB("");
   };
 
   const onPressRefresh = () => {
     setDisplay("0");
-    setOperandoA("");
-    setOperandoB("");
-    setOperacion("");
+    setOperandoA(0);
+    setOperandoB(0);
+    setOperacion("+");
   };
 
   return (
